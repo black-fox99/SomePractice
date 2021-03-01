@@ -12,7 +12,15 @@ public class Student {
 }
 
 class StudentTest {
+
+    double sredArifmOcenka(Student st){
+        double sredOcenka = (st.mathAverageGrade + st.economicsAverageGrade + st.foreignLanguageAverageGrade) / 3;
+        System.out.println("Srednyaya arifmeticheskaya ocenka studenta " + st.name + " " + st.surname + ": " + sredOcenka);
+        return sredOcenka;
+    }
+
     public static void main(String[] args) {
+
         Student st1 = new Student();
         st1.studentId = 1;
         st1.name = "Nikolay";
@@ -40,8 +48,10 @@ class StudentTest {
         st3.economicsAverageGrade = 8.2;
         st3.foreignLanguageAverageGrade = 8.1;
 
-        System.out.println("Средняя арифметическая оценка студента " + st1.name + " " +st1.surname + ": " + (st1.mathAverageGrade + st1.economicsAverageGrade + st1.foreignLanguageAverageGrade) / 3);
-        System.out.println("Средняя арифметическая оценка студента " + st2.name + " " +st2.surname + ": " + (st2.mathAverageGrade + st2.economicsAverageGrade + st2.foreignLanguageAverageGrade) / 3);
-        System.out.println("Средняя арифметическая оценка студента " + st3.name + " " +st3.surname + ": " + (st3.mathAverageGrade + st3.economicsAverageGrade + st3.foreignLanguageAverageGrade) / 3);
+        StudentTest sTest = new StudentTest();
+        sTest.sredArifmOcenka(st1);
+        sTest.sredArifmOcenka(st2);
+        sTest.sredArifmOcenka(st3);
+
     }
 }
